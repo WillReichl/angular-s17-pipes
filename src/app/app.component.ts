@@ -11,25 +11,25 @@ export class AppComponent {
       instanceType: 'medium',
       name: 'Production Server',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2017, 12, 1)
     },
     {
       instanceType: 'large',
       name: 'User Database',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2017, 12, 1)
     },
     {
       instanceType: 'small',
       name: 'Development Server',
       status: 'offline',
-      started: new Date(15, 1, 2017)
+      started: new Date(2017, 12, 1)
     },
     {
       instanceType: 'small',
       name: 'Testing Environment Server',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2017, 11, 1)
     }
   ];
   filteredStatus = '';
@@ -39,5 +39,13 @@ export class AppComponent {
       'list-group-item-warning': server.status === 'offline',
       'list-group-item-danger': server.status === 'critical'
     };
+  }
+  public onAddServer() {
+    this.servers.push({
+      instanceType: 'small',
+      name: 'New Server',
+      status: 'stable',
+      started: new Date(2017, 12, 1)
+    });
   }
 }
